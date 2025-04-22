@@ -8,6 +8,8 @@ Servers: # A list of game servers to observe.
       #  - A X or a Y Coordinate (e.g., I, A, 4, 7, etc.); using only an X or Y coordinate generally means "the whole row/column", as if each grid in that row/column would be defined explicitly
       #  - An optional Numpad (1-9); Only reasonable when either an X or Y coordinate or both are provided as well. It will limit the area of a whole grid that is allowed.
       #    The Numpad config can also contain multiple Numpads, e.g., 1,2,3 or 9,6,3.
+      #
+      # Always include the first row/column of the side as well. The game will return a random HQ as the position when a player connects for the first time.
       AxisFence: # A list of fences for the Axis side
         - X: A # Axis players in this configuration can use the whole J column, from 1-10.
       AlliesFence: # A list of fences for Allies side
