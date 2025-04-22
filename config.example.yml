@@ -1,0 +1,21 @@
+Servers: # A list of game servers to observe.
+    - Host: 0.0.0.0 # The IP address of the game server
+      Port: 7779 # The RCON port of the game server (usually it can be found in the GSP console)
+      Password: my_secure_password # The RCON password of the game server (usually in the GSP console as well)
+      PunishAfterSeconds: 10 # (Optional) The number of seconds a player can be out-of-bounds (outside a fence) before getting punished
+      # Fences are the areas a player is supposed to stay in and cannot leave. Each fence can be:
+      #  - An X and Y Grid (e.g., I8, A2, F6, etc.)
+      #  - A X or a Y Coordinate (e.g., I, A, 4, 7, etc.); using only an X or Y coordinate generally means "the whole row/column", as if each grid in that row/column would be defined explicitly
+      #  - An optional Numpad (1-9); Only reasonable when either an X or Y coordinate or both are provided as well. It will limit the area of a whole grid that is allowed.
+      #    The Numpad config can also contain multiple Numpads, e.g., 1,2,3 or 9,6,3.
+      AxisFence: # A list of fences for the Axis side
+        - X: A # Axis players in this configuration can use the whole J column, from 1-10.
+      AlliesFence: # A list of fences for Allies side
+        - X: I # Allies players can use the whole I column
+        - X: J # as well as the whole J column
+        - X: H # they can also use the H3 grid in the numpads 9, 6 and 3
+          "Y": 3
+          Numpad:
+            - 9
+            - 6
+            - 3
