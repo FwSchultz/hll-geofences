@@ -73,9 +73,8 @@ func (w *worker) punishPlayers(ctx context.Context) {
 		case <-w.punishTicker.C:
 			for id, t := range w.outsidePlayers {
 				println(id, t.String(), time.Since(t).String(), w.punishAfterSeconds.String())
-				if time.Since(t) > w.punishAfterSeconds {
-					w.punishPlayer(ctx, id)
-					delete(w.outsidePlayers, id)
+				if time.Since(t) > w.punishAfterSeconds && time.Since(t) < w.punishAfterSeconds+5*time.Second {
+					go w.punishPlayer(ctx, id)
 				}
 			}
 		}
@@ -89,6 +88,9 @@ func (w *worker) punishPlayer(ctx context.Context, id string) {
 	if err != nil {
 		w.l.Error("poll-session", "error", err)
 	}
+	// give the observer time to get the new player position
+	time.Sleep(5 * time.Second)
+	delete(w.outsidePlayers, id)
 }
 
 func (w *worker) pollSession(ctx context.Context) {
