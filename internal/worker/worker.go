@@ -72,7 +72,6 @@ func (w *worker) punishPlayers(ctx context.Context) {
 		select {
 		case <-w.punishTicker.C:
 			for id, t := range w.outsidePlayers {
-				println(id, t.String(), time.Since(t).String(), w.punishAfterSeconds.String())
 				if time.Since(t) > w.punishAfterSeconds && time.Since(t) < w.punishAfterSeconds+5*time.Second {
 					go w.punishPlayer(ctx, id)
 				}
