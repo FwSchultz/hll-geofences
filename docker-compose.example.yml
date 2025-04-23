@@ -1,0 +1,6 @@
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./config.yml:/app/config.yml
