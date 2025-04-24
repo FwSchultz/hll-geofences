@@ -9,9 +9,10 @@ import (
 )
 
 type Fence struct {
-	X       *string `yaml:"X,omitempty"`
-	Y       *int    `yaml:"Y,omitempty"`
-	Numpads []int   `yaml:"Numpad,omitempty"`
+	X         *string     `yaml:"X,omitempty"`
+	Y         *int        `yaml:"Y,omitempty"`
+	Numpads   []int       `yaml:"Numpad,omitempty"`
+	Condition []Condition `yaml:"Condition,omitempty"`
 }
 
 func (f Fence) Includes(w api.Grid) bool {
@@ -25,6 +26,38 @@ func (f Fence) Includes(w api.Grid) bool {
 		return true
 	}
 	return slices.Contains(f.Numpads, w.Numpad)
+}
+
+func (f Fence) Matches(si *api.GetSessionResponse) bool {
+	if len(f.Condition) == 0 {
+		return true
+	}
+	for _, c := range f.Condition {
+		if !c.Matches(si) {
+			return false
+		}
+	}
+	return true
+}
+
+type Condition struct {
+	Equals map[string][]string `yaml:"Equals"`
+}
+
+func (c Condition) Matches(si *api.GetSessionResponse) bool {
+	if len(c.Equals) == 0 {
+		return true
+	}
+	for k, v := range c.Equals {
+		if k == "map_name" && slices.Contains(v, si.MapName) {
+			continue
+		}
+		if k == "game_mode" && slices.Contains(v, si.GameMode) {
+			continue
+		}
+		return false
+	}
+	return true
 }
 
 type Server struct {

@@ -32,41 +32,91 @@ var _ = Describe("Config", func() {
 	})
 
 	Describe("Fence", func() {
-		It("returns false when not includes", func() {
-			Expect(internal.Fence{
-				X:       Pointer("G"),
-				Y:       Pointer(4),
-				Numpads: []int{4, 5, 6},
-			}.Includes(api.Grid{X: "H", Y: 1, Numpad: 7})).To(BeFalse())
+		Context("Includes", func() {
+			It("returns false when not includes", func() {
+				Expect(internal.Fence{
+					X:       Pointer("G"),
+					Y:       Pointer(4),
+					Numpads: []int{4, 5, 6},
+				}.Includes(api.Grid{X: "H", Y: 1, Numpad: 7})).To(BeFalse())
+			})
+
+			It("includes fence when direct match", func() {
+				Expect(internal.Fence{
+					X:       Pointer("G"),
+					Y:       Pointer(4),
+					Numpads: []int{4, 5, 6},
+				}.Includes(api.Grid{X: "G", Y: 4, Numpad: 5})).To(BeTrue())
+			})
+
+			It("includes fence when matching whole line X-axis", func() {
+				Expect(internal.Fence{
+					X:       Pointer("G"),
+					Numpads: []int{4, 5, 6},
+				}.Includes(api.Grid{X: "G", Y: 8, Numpad: 5})).To(BeTrue())
+			})
+
+			It("includes fence when matching whole line Y-axis", func() {
+				Expect(internal.Fence{
+					Y:       Pointer(5),
+					Numpads: []int{4, 5, 6},
+				}.Includes(api.Grid{X: "A", Y: 5, Numpad: 5})).To(BeTrue())
+			})
+
+			It("includes fence when no numpad specified", func() {
+				Expect(internal.Fence{
+					X: Pointer("G"),
+					Y: Pointer(5),
+				}.Includes(api.Grid{X: "G", Y: 5, Numpad: 7})).To(BeTrue())
+			})
 		})
 
-		It("includes fence when direct match", func() {
-			Expect(internal.Fence{
-				X:       Pointer("G"),
-				Y:       Pointer(4),
-				Numpads: []int{4, 5, 6},
-			}.Includes(api.Grid{X: "G", Y: 4, Numpad: 5})).To(BeTrue())
-		})
+		Context("Matches", func() {
+			var si *api.GetSessionResponse
 
-		It("includes fence when matching whole line X-axis", func() {
-			Expect(internal.Fence{
-				X:       Pointer("G"),
-				Numpads: []int{4, 5, 6},
-			}.Includes(api.Grid{X: "G", Y: 8, Numpad: 5})).To(BeTrue())
-		})
+			BeforeEach(func() {
+				si = &api.GetSessionResponse{
+					MapName:  "CARENTAN",
+					GameMode: "Warfare",
+				}
+			})
 
-		It("includes fence when matching whole line Y-axis", func() {
-			Expect(internal.Fence{
-				Y:       Pointer(5),
-				Numpads: []int{4, 5, 6},
-			}.Includes(api.Grid{X: "A", Y: 5, Numpad: 5})).To(BeTrue())
-		})
+			It("matches when no condition", func() {
+				Expect(internal.Fence{}.Matches(si)).To(BeTrue())
+			})
 
-		It("includes fence when no numpad specified", func() {
-			Expect(internal.Fence{
-				X: Pointer("G"),
-				Y: Pointer(5),
-			}.Includes(api.Grid{X: "G", Y: 5, Numpad: 7})).To(BeTrue())
+			It("map with same name and mode", func() {
+				Expect(internal.Fence{Condition: []internal.Condition{
+					{
+						Equals: map[string][]string{
+							"map_name":  {si.MapName},
+							"game_mode": {si.GameMode},
+						},
+					},
+				}}.Matches(si)).To(BeTrue())
+			})
+
+			It("does not match with wrong game mode", func() {
+				Expect(internal.Fence{Condition: []internal.Condition{
+					{
+						Equals: map[string][]string{
+							"map_name":  {si.MapName},
+							"game_mode": {"Skirmish"},
+						},
+					},
+				}}.Matches(si)).To(BeFalse())
+			})
+
+			It("does not match with wrong map name", func() {
+				Expect(internal.Fence{Condition: []internal.Condition{
+					{
+						Equals: map[string][]string{
+							"map_name":  {"TOBRUK"},
+							"game_mode": {si.GameMode},
+						},
+					},
+				}}.Matches(si)).To(BeFalse())
+			})
 		})
 	})
 })

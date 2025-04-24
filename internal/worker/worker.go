@@ -14,6 +14,7 @@ import (
 type worker struct {
 	pool               *rconv2.ConnectionPool
 	l                  *slog.Logger
+	c                  internal.Server
 	axisFences         []internal.Fence
 	alliesFences       []internal.Fence
 	punishAfterSeconds time.Duration
@@ -35,10 +36,9 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c internal.Server) *
 		l:                  l,
 		pool:               pool,
 		punishAfterSeconds: time.Duration(punishAfterSeconds) * time.Second,
-		axisFences:         c.AxisFence,
-		alliesFences:       c.AlliesFence,
+		c:                  c,
 
-		sessionTicker:  time.NewTicker(5 * time.Second),
+		sessionTicker:  time.NewTicker(1 * time.Second),
 		playerTicker:   time.NewTicker(500 * time.Millisecond),
 		punishTicker:   time.NewTicker(time.Second),
 		outsidePlayers: map[string]time.Time{},
@@ -63,6 +63,8 @@ func (w *worker) populateSession(ctx context.Context) error {
 			return err
 		}
 		w.current = si
+		w.axisFences = w.applicableFences(w.c.AxisFence)
+		w.alliesFences = w.applicableFences(w.c.AlliesFence)
 		return nil
 	})
 }
@@ -145,6 +147,9 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	} else {
 		fences = w.axisFences
 	}
+	if len(fences) == 0 {
+		return
+	}
 	for _, f := range fences {
 		if f.Includes(g) {
 			delete(w.outsidePlayers, p.Id)
@@ -162,4 +167,13 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	if err != nil {
 		w.l.Error("message-player-outside-fence", "player", p.Name, "grid", g, "error", err)
 	}
+}
+
+func (w *worker) applicableFences(f []internal.Fence) (v []internal.Fence) {
+	for _, fence := range f {
+		if fence.Matches(w.current) {
+			v = append(v, fence)
+		}
+	}
+	return
 }
