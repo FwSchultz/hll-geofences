@@ -10,6 +10,8 @@ Servers: # A list of game servers to observe.
       #    The Numpad config can also contain multiple Numpads, e.g., 1,2,3 or 9,6,3.
       #
       # Always include the first row/column of the side as well. The game will return a random HQ as the position when a player connects for the first time.
+      # When fences have conditions and no fence matches the current game state, then the tool does not do anything, as if there was no fence defined
+      # at all.
       AxisFence: # A list of fences for the Axis side
         - X: A # Axis players in this configuration can use the whole J column, from 1-10.
       AlliesFence: # A list of fences for Allies side
@@ -21,3 +23,15 @@ Servers: # A list of game servers to observe.
             - 9
             - 6
             - 3
+          # An optional list of conditions that need to be matched for this fence to be considered applicable for the current game state.Condition:
+          # Available conditions are:
+          #  - map_name: The name of the current map, e.g., CARENTAN or TOBRUK. See https://gist.github.com/timraay/5634d85eab552b5dfafb9fd61273dc52#available-maps
+          #    for a list of available map names. The map name is always without the game mode.
+          #  - game_mode: Either Warfare, Skirmish or Offensive. Matches when the current game mode is one of the mentioned
+          # Each condition is a key value map, where the key is an available condition (see the list above). The value is a list of
+          # possible values. Each condition key is evaluated with a logical AND to each other. Each value of a condition is evaluated with a logical OR.
+          # This means, in the following example, the map has to be TORBUK and the game mode has to be either Warfare or Skirmish for this fence to be applied.
+          Condition:
+            Equals: # The only possible condition is Equals.
+              map_name: [TOBRUK]
+              game_mode: [Warfare, Skirmish]
