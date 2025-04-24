@@ -9,10 +9,10 @@ import (
 )
 
 type Fence struct {
-	X         *string     `yaml:"X,omitempty"`
-	Y         *int        `yaml:"Y,omitempty"`
-	Numpads   []int       `yaml:"Numpad,omitempty"`
-	Condition []Condition `yaml:"Condition,omitempty"`
+	X         *string    `yaml:"X,omitempty"`
+	Y         *int       `yaml:"Y,omitempty"`
+	Numpads   []int      `yaml:"Numpad,omitempty"`
+	Condition *Condition `yaml:"Condition,omitempty"`
 }
 
 func (f Fence) Includes(w api.Grid) bool {
@@ -29,21 +29,16 @@ func (f Fence) Includes(w api.Grid) bool {
 }
 
 func (f Fence) Matches(si *api.GetSessionResponse) bool {
-	if len(f.Condition) == 0 {
+	if f.Condition == nil {
 		return true
 	}
-	for _, c := range f.Condition {
-		if !c.Matches(si) {
-			return false
-		}
-	}
-	return true
+	return f.Condition.Matches(si)
 }
 
 type Condition struct {
-	Equals      map[string][]string `yaml:"Equals"`
-	LessThan    map[string]int      `yaml:"LessThan"`
-	GreaterThan map[string]int      `yaml:"GreaterThan"`
+	Equals      map[string][]string `yaml:"Equals,omitempty"`
+	LessThan    map[string]int      `yaml:"LessThan,omitempty"`
+	GreaterThan map[string]int      `yaml:"GreaterThan,omitempty"`
 }
 
 func (c Condition) Matches(si *api.GetSessionResponse) bool {

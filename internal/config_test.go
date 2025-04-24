@@ -88,44 +88,36 @@ var _ = Describe("Config", func() {
 			})
 
 			It("map with same name and mode", func() {
-				Expect(internal.Fence{Condition: []internal.Condition{
-					{
-						Equals: map[string][]string{
-							"map_name":  {si.MapName},
-							"game_mode": {si.GameMode},
-						},
+				Expect(internal.Fence{Condition: &internal.Condition{
+					Equals: map[string][]string{
+						"map_name":  {si.MapName},
+						"game_mode": {si.GameMode},
 					},
 				}}.Matches(si)).To(BeTrue())
 			})
 
 			It("does not match with wrong game mode", func() {
-				Expect(internal.Fence{Condition: []internal.Condition{
-					{
-						Equals: map[string][]string{
-							"map_name":  {si.MapName},
-							"game_mode": {"Skirmish"},
-						},
+				Expect(internal.Fence{Condition: &internal.Condition{
+					Equals: map[string][]string{
+						"map_name":  {si.MapName},
+						"game_mode": {"Skirmish"},
 					},
 				}}.Matches(si)).To(BeFalse())
 			})
 
 			It("does not match with wrong map name", func() {
-				Expect(internal.Fence{Condition: []internal.Condition{
-					{
-						Equals: map[string][]string{
-							"map_name":  {"TOBRUK"},
-							"game_mode": {si.GameMode},
-						},
+				Expect(internal.Fence{Condition: &internal.Condition{
+					Equals: map[string][]string{
+						"map_name":  {"TOBRUK"},
+						"game_mode": {si.GameMode},
 					},
 				}}.Matches(si)).To(BeFalse())
 			})
 
 			DescribeTable("when less than players than", func(pc int, expected bool) {
-				Expect(internal.Fence{Condition: []internal.Condition{
-					{
-						LessThan: map[string]int{
-							"player_count": pc,
-						},
+				Expect(internal.Fence{Condition: &internal.Condition{
+					LessThan: map[string]int{
+						"player_count": pc,
 					},
 				}}.Matches(si)).To(Equal(expected))
 			},
@@ -135,11 +127,9 @@ var _ = Describe("Config", func() {
 			)
 
 			DescribeTable("when greater than players than", func(pc int, expected bool) {
-				Expect(internal.Fence{Condition: []internal.Condition{
-					{
-						GreaterThan: map[string]int{
-							"player_count": pc,
-						},
+				Expect(internal.Fence{Condition: &internal.Condition{
+					GreaterThan: map[string]int{
+						"player_count": pc,
 					},
 				}}.Matches(si)).To(Equal(expected))
 			},
