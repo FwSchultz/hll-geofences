@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/floriansw/go-hll-rcon/rconv2"
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
-	"github.com/floriansw/hll-geofences/internal"
+	"github.com/floriansw/hll-geofences/data"
 	"log/slog"
 	"slices"
 	"time"
@@ -14,9 +14,9 @@ import (
 type worker struct {
 	pool               *rconv2.ConnectionPool
 	l                  *slog.Logger
-	c                  internal.Server
-	axisFences         []internal.Fence
-	alliesFences       []internal.Fence
+	c                  data.Server
+	axisFences         []data.Fence
+	alliesFences       []data.Fence
 	punishAfterSeconds time.Duration
 
 	sessionTicker *time.Ticker
@@ -27,7 +27,7 @@ type worker struct {
 	outsidePlayers map[string]time.Time
 }
 
-func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c internal.Server) *worker {
+func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *worker {
 	punishAfterSeconds := 10
 	if c.PunishAfterSeconds != nil {
 		punishAfterSeconds = *c.PunishAfterSeconds
@@ -84,7 +84,7 @@ func (w *worker) punishPlayers(ctx context.Context) {
 
 func (w *worker) punishPlayer(ctx context.Context, id string) {
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
-		return c.PunishPlayer(ctx, id, fmt.Sprintf("%s outside the playarea", w.punishAfterSeconds.String()))
+		return c.PunishPlayer(ctx, id, fmt.Sprintf(w.c.PunishMessage(), w.punishAfterSeconds.String()))
 	})
 	if err != nil {
 		w.l.Error("poll-session", "error", err)
@@ -141,7 +141,7 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 		return
 	}
 	g := p.Position.Grid(w.current)
-	var fences []internal.Fence
+	var fences []data.Fence
 	if slices.Contains(alliedTeams, p.Team) {
 		fences = w.alliesFences
 	} else {
@@ -162,14 +162,14 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	w.outsidePlayers[p.Id] = time.Now()
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
-		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf("You are outside of the designated playarea! Please go back to the battlefield immediately.\n\nYou will be punished in %s", w.punishAfterSeconds.String()))
+		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf(w.c.WarningMessage(), w.punishAfterSeconds.String()))
 	})
 	if err != nil {
 		w.l.Error("message-player-outside-fence", "player", p.Name, "grid", g, "error", err)
 	}
 }
 
-func (w *worker) applicableFences(f []internal.Fence) (v []internal.Fence) {
+func (w *worker) applicableFences(f []data.Fence) (v []data.Fence) {
 	for _, fence := range f {
 		if fence.Matches(w.current) {
 			v = append(v, fence)

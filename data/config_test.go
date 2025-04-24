@@ -1,8 +1,8 @@
-package internal_test
+package data_test
 
 import (
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
-	"github.com/floriansw/hll-geofences/internal"
+	"github.com/floriansw/hll-geofences/data"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/ginkgo/extensions/table"
 	. "github.com/onsi/gomega"
@@ -18,16 +18,16 @@ var _ = Describe("Config", func() {
 			Expect(err).ToNot(HaveOccurred())
 			defer os.Remove(f.Name())
 			Expect(os.WriteFile(f.Name(), []byte("{}"), 0655)).ToNot(HaveOccurred())
-			c, err := internal.NewConfig(f.Name(), l)
+			c, err := data.NewConfig(f.Name(), l)
 			Expect(err).ToNot(HaveOccurred())
 
 			Expect(c.Save()).ToNot(HaveOccurred())
-			c, err = internal.NewConfig(f.Name(), l)
+			c, err = data.NewConfig(f.Name(), l)
 			Expect(err).ToNot(HaveOccurred())
 
 			Expect(c.Save()).ToNot(HaveOccurred())
 
-			c, err = internal.NewConfig(f.Name(), l)
+			c, err = data.NewConfig(f.Name(), l)
 			Expect(err).ToNot(HaveOccurred())
 		})
 	})
@@ -35,7 +35,7 @@ var _ = Describe("Config", func() {
 	Describe("Fence", func() {
 		Context("Includes", func() {
 			It("returns false when not includes", func() {
-				Expect(internal.Fence{
+				Expect(data.Fence{
 					X:       Pointer("G"),
 					Y:       Pointer(4),
 					Numpads: []int{4, 5, 6},
@@ -43,7 +43,7 @@ var _ = Describe("Config", func() {
 			})
 
 			It("includes fence when direct match", func() {
-				Expect(internal.Fence{
+				Expect(data.Fence{
 					X:       Pointer("G"),
 					Y:       Pointer(4),
 					Numpads: []int{4, 5, 6},
@@ -51,21 +51,21 @@ var _ = Describe("Config", func() {
 			})
 
 			It("includes fence when matching whole line X-axis", func() {
-				Expect(internal.Fence{
+				Expect(data.Fence{
 					X:       Pointer("G"),
 					Numpads: []int{4, 5, 6},
 				}.Includes(api.Grid{X: "G", Y: 8, Numpad: 5})).To(BeTrue())
 			})
 
 			It("includes fence when matching whole line Y-axis", func() {
-				Expect(internal.Fence{
+				Expect(data.Fence{
 					Y:       Pointer(5),
 					Numpads: []int{4, 5, 6},
 				}.Includes(api.Grid{X: "A", Y: 5, Numpad: 5})).To(BeTrue())
 			})
 
 			It("includes fence when no numpad specified", func() {
-				Expect(internal.Fence{
+				Expect(data.Fence{
 					X: Pointer("G"),
 					Y: Pointer(5),
 				}.Includes(api.Grid{X: "G", Y: 5, Numpad: 7})).To(BeTrue())
@@ -84,11 +84,11 @@ var _ = Describe("Config", func() {
 			})
 
 			It("matches when no condition", func() {
-				Expect(internal.Fence{}.Matches(si)).To(BeTrue())
+				Expect(data.Fence{}.Matches(si)).To(BeTrue())
 			})
 
 			It("map with same name and mode", func() {
-				Expect(internal.Fence{Condition: &internal.Condition{
+				Expect(data.Fence{Condition: &data.Condition{
 					Equals: map[string][]string{
 						"map_name":  {si.MapName},
 						"game_mode": {si.GameMode},
@@ -97,7 +97,7 @@ var _ = Describe("Config", func() {
 			})
 
 			It("does not match with wrong game mode", func() {
-				Expect(internal.Fence{Condition: &internal.Condition{
+				Expect(data.Fence{Condition: &data.Condition{
 					Equals: map[string][]string{
 						"map_name":  {si.MapName},
 						"game_mode": {"Skirmish"},
@@ -106,7 +106,7 @@ var _ = Describe("Config", func() {
 			})
 
 			It("does not match with wrong map name", func() {
-				Expect(internal.Fence{Condition: &internal.Condition{
+				Expect(data.Fence{Condition: &data.Condition{
 					Equals: map[string][]string{
 						"map_name":  {"TOBRUK"},
 						"game_mode": {si.GameMode},
@@ -115,7 +115,7 @@ var _ = Describe("Config", func() {
 			})
 
 			DescribeTable("when less than players than", func(pc int, expected bool) {
-				Expect(internal.Fence{Condition: &internal.Condition{
+				Expect(data.Fence{Condition: &data.Condition{
 					LessThan: map[string]int{
 						"player_count": pc,
 					},
@@ -127,7 +127,7 @@ var _ = Describe("Config", func() {
 			)
 
 			DescribeTable("when greater than players than", func(pc int, expected bool) {
-				Expect(internal.Fence{Condition: &internal.Condition{
+				Expect(data.Fence{Condition: &data.Condition{
 					GreaterThan: map[string]int{
 						"player_count": pc,
 					},

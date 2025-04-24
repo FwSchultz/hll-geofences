@@ -1,4 +1,4 @@
-package internal
+package data
 
 import (
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
@@ -70,12 +70,32 @@ func (c Condition) Matches(si *api.GetSessionResponse) bool {
 }
 
 type Server struct {
-	Host               string  `yaml:"Host"`
-	Port               int     `yaml:"Port"`
-	Password           string  `yaml:"Password"`
-	PunishAfterSeconds *int    `yaml:"PunishAfterSeconds,omitempty"`
-	AxisFence          []Fence `yaml:"AxisFence"`
-	AlliesFence        []Fence `yaml:"AlliesFence"`
+	Host               string    `yaml:"Host"`
+	Port               int       `yaml:"Port"`
+	Password           string    `yaml:"Password"`
+	PunishAfterSeconds *int      `yaml:"PunishAfterSeconds,omitempty"`
+	AxisFence          []Fence   `yaml:"AxisFence"`
+	AlliesFence        []Fence   `yaml:"AlliesFence"`
+	Messages           *Messages `yaml:"Messages,omitempty"`
+}
+
+func (s Server) WarningMessage() string {
+	if s.Messages == nil || s.Messages.Warning == nil {
+		return "You are outside of the designated play area! Please go back to the battlefield immediately.\n\nYou will be punished in %s"
+	}
+	return *s.Messages.Warning
+}
+
+func (s Server) PunishMessage() string {
+	if s.Messages == nil || s.Messages.Punish == nil {
+		return "%s outside the play area"
+	}
+	return *s.Messages.Punish
+}
+
+type Messages struct {
+	Warning *string `yaml:"Warning,omitempty"`
+	Punish  *string `yaml:"Punish,omitempty"`
 }
 
 type Config struct {

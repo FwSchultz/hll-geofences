@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"github.com/floriansw/go-hll-rcon/rconv2"
-	"github.com/floriansw/hll-geofences/internal"
-	"github.com/floriansw/hll-geofences/internal/worker"
+	"github.com/floriansw/hll-geofences/data"
+	"github.com/floriansw/hll-geofences/worker"
 	"log/slog"
 	"os"
 	"os/signal"
@@ -19,7 +19,7 @@ func main() {
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: level}))
 
-	c, err := internal.NewConfig("./config.yml", logger)
+	c, err := data.NewConfig("./config.yml", logger)
 	if err != nil {
 		logger.Error("config", err)
 		return
