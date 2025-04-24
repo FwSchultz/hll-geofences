@@ -76,11 +76,13 @@ func (w *worker) punishPlayers(ctx context.Context) {
 	for {
 		select {
 		case <-w.punishTicker.C:
+			w.mutex.Lock()
 			for id, t := range w.outsidePlayers {
 				if time.Since(t) > w.punishAfterSeconds && time.Since(t) < w.punishAfterSeconds+5*time.Second {
 					go w.punishPlayer(ctx, id)
 				}
 			}
+			w.mutex.Unlock()
 		}
 	}
 }
@@ -167,10 +169,10 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 			return
 		}
 	}
+	w.mutex.Lock()
 	if _, ok := w.outsidePlayers[p.Id]; ok {
 		return
 	}
-	w.mutex.Lock()
 	w.outsidePlayers[p.Id] = time.Now()
 	w.mutex.Unlock()
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
