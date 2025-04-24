@@ -23,15 +23,26 @@ Servers: # A list of game servers to observe.
             - 9
             - 6
             - 3
-          # An optional list of conditions that need to be matched for this fence to be considered applicable for the current game state.Condition:
-          # Available conditions are:
-          #  - map_name: The name of the current map, e.g., CARENTAN or TOBRUK. See https://gist.github.com/timraay/5634d85eab552b5dfafb9fd61273dc52#available-maps
-          #    for a list of available map names. The map name is always without the game mode.
-          #  - game_mode: Either Warfare, Skirmish or Offensive. Matches when the current game mode is one of the mentioned
-          # Each condition is a key value map, where the key is an available condition (see the list above). The value is a list of
-          # possible values. Each condition key is evaluated with a logical AND to each other. Each value of a condition is evaluated with a logical OR.
+          # An optional list of conditions that need to be matched for this fence to be considered applicable for the current game state.
+          # Each condition is a key value map, where the key is an available condition (see the list per operator). Each condition key is evaluated with a
+          # logical AND to each other. Each value of a condition is evaluated with a logical OR.
           # This means, in the following example, the map has to be TORBUK and the game mode has to be either Warfare or Skirmish for this fence to be applied.
           Condition:
-            Equals: # The only possible condition is Equals.
+            Equals: # As it implies: Matches when the condition key value is equal to the current game state equivalent.
+              # Available conditions are:
+              #  - map_name: The name of the current map, e.g., CARENTAN or TOBRUK. See https://gist.github.com/timraay/5634d85eab552b5dfafb9fd61273dc52#available-maps
+              #    for a list of available map names. The map name is always without the game mode.
+              #  - game_mode: Either Warfare, Skirmish or Offensive. Matches when the current game mode is one of the mentioned
+              # Each condition key value is a list of possible values.
               map_name: [TOBRUK]
               game_mode: [Warfare, Skirmish]
+            # Matches only when the current game state equivalent is less than the condition key value. E.g., if the condition key
+            # player_count is used and set to 50, a player count of 49 on the server will match the condition; 50 and more, however, will not.
+            LessThan:
+              # Available conditions are:
+              #  - player_count: The number of players on the server
+              player_count: 50
+            GreaterThan: # Same as LessThan, just that it matches when the game state equivalent is greater than the condition key value.
+              # Available conditions are:
+              #  - player_count: The number of players on the server
+              player_count: 50

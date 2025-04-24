@@ -4,6 +4,7 @@ import (
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
 	"github.com/floriansw/hll-geofences/internal"
 	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/extensions/table"
 	. "github.com/onsi/gomega"
 	"log/slog"
 	"os"
@@ -76,8 +77,9 @@ var _ = Describe("Config", func() {
 
 			BeforeEach(func() {
 				si = &api.GetSessionResponse{
-					MapName:  "CARENTAN",
-					GameMode: "Warfare",
+					MapName:     "CARENTAN",
+					GameMode:    "Warfare",
+					PlayerCount: 40,
 				}
 			})
 
@@ -117,6 +119,34 @@ var _ = Describe("Config", func() {
 					},
 				}}.Matches(si)).To(BeFalse())
 			})
+
+			DescribeTable("when less than players than", func(pc int, expected bool) {
+				Expect(internal.Fence{Condition: []internal.Condition{
+					{
+						LessThan: map[string]int{
+							"player_count": pc,
+						},
+					},
+				}}.Matches(si)).To(Equal(expected))
+			},
+				Entry("more players", 20, false),
+				Entry("less players", 60, true),
+				Entry("equal number of players", 40, false),
+			)
+
+			DescribeTable("when greater than players than", func(pc int, expected bool) {
+				Expect(internal.Fence{Condition: []internal.Condition{
+					{
+						GreaterThan: map[string]int{
+							"player_count": pc,
+						},
+					},
+				}}.Matches(si)).To(Equal(expected))
+			},
+				Entry("more players", 20, true),
+				Entry("less players", 60, false),
+				Entry("equal number of players", 40, false),
+			)
 		})
 	})
 })

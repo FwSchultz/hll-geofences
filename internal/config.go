@@ -41,11 +41,13 @@ func (f Fence) Matches(si *api.GetSessionResponse) bool {
 }
 
 type Condition struct {
-	Equals map[string][]string `yaml:"Equals"`
+	Equals      map[string][]string `yaml:"Equals"`
+	LessThan    map[string]int      `yaml:"LessThan"`
+	GreaterThan map[string]int      `yaml:"GreaterThan"`
 }
 
 func (c Condition) Matches(si *api.GetSessionResponse) bool {
-	if len(c.Equals) == 0 {
+	if len(c.Equals) == 0 && len(c.LessThan) == 0 && len(c.GreaterThan) == 0 {
 		return true
 	}
 	for k, v := range c.Equals {
@@ -53,6 +55,18 @@ func (c Condition) Matches(si *api.GetSessionResponse) bool {
 			continue
 		}
 		if k == "game_mode" && slices.Contains(v, si.GameMode) {
+			continue
+		}
+		return false
+	}
+	for k, v := range c.LessThan {
+		if k == "player_count" && si.PlayerCount < v {
+			continue
+		}
+		return false
+	}
+	for k, v := range c.GreaterThan {
+		if k == "player_count" && si.PlayerCount > v {
 			continue
 		}
 		return false
