@@ -8,6 +8,7 @@ import (
 	"github.com/floriansw/hll-geofences/data"
 	"log/slog"
 	"slices"
+	"sync"
 	"time"
 )
 
@@ -18,6 +19,7 @@ type worker struct {
 	axisFences         []data.Fence
 	alliesFences       []data.Fence
 	punishAfterSeconds time.Duration
+	mutex              *sync.RWMutex
 
 	sessionTicker *time.Ticker
 	playerTicker  *time.Ticker
@@ -37,6 +39,7 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		pool:               pool,
 		punishAfterSeconds: time.Duration(punishAfterSeconds) * time.Second,
 		c:                  c,
+		mutex:              &sync.RWMutex{},
 
 		sessionTicker:  time.NewTicker(1 * time.Second),
 		playerTicker:   time.NewTicker(500 * time.Millisecond),
@@ -91,7 +94,9 @@ func (w *worker) punishPlayer(ctx context.Context, id string) {
 	}
 	// give the observer time to get the new player position
 	time.Sleep(5 * time.Second)
+	w.mutex.Lock()
 	delete(w.outsidePlayers, id)
+	w.mutex.Unlock()
 }
 
 func (w *worker) pollSession(ctx context.Context) {
@@ -156,14 +161,18 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	}
 	for _, f := range fences {
 		if f.Includes(g) {
+			w.mutex.Lock()
 			delete(w.outsidePlayers, p.Id)
+			w.mutex.Unlock()
 			return
 		}
 	}
 	if _, ok := w.outsidePlayers[p.Id]; ok {
 		return
 	}
+	w.mutex.Lock()
 	w.outsidePlayers[p.Id] = time.Now()
+	w.mutex.Unlock()
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf(w.c.WarningMessage(), w.punishAfterSeconds.String()))
