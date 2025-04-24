@@ -109,6 +109,10 @@ func (w *worker) pollPlayers(ctx context.Context) {
 	for {
 		select {
 		case <-w.playerTicker.C:
+			if len(w.alliesFences) == 0 && len(w.axisFences) == 0 {
+				continue
+			}
+
 			err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 				players, err := c.Players(ctx)
 				if err != nil {
