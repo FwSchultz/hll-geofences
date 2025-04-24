@@ -19,14 +19,13 @@ type worker struct {
 	axisFences         []data.Fence
 	alliesFences       []data.Fence
 	punishAfterSeconds time.Duration
-	mutex              *sync.RWMutex
 
 	sessionTicker *time.Ticker
 	playerTicker  *time.Ticker
 	punishTicker  *time.Ticker
 
 	current        *api.GetSessionResponse
-	outsidePlayers map[string]time.Time
+	outsidePlayers sync.Map
 }
 
 func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *worker {
@@ -39,12 +38,11 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		pool:               pool,
 		punishAfterSeconds: time.Duration(punishAfterSeconds) * time.Second,
 		c:                  c,
-		mutex:              &sync.RWMutex{},
 
 		sessionTicker:  time.NewTicker(1 * time.Second),
 		playerTicker:   time.NewTicker(500 * time.Millisecond),
 		punishTicker:   time.NewTicker(time.Second),
-		outsidePlayers: map[string]time.Time{},
+		outsidePlayers: sync.Map{},
 	}
 }
 
@@ -76,13 +74,14 @@ func (w *worker) punishPlayers(ctx context.Context) {
 	for {
 		select {
 		case <-w.punishTicker.C:
-			w.mutex.Lock()
-			for id, t := range w.outsidePlayers {
+			w.outsidePlayers.Range(func(k, v interface{}) bool {
+				id := k.(string)
+				t := v.(time.Time)
 				if time.Since(t) > w.punishAfterSeconds && time.Since(t) < w.punishAfterSeconds+5*time.Second {
 					go w.punishPlayer(ctx, id)
 				}
-			}
-			w.mutex.Unlock()
+				return true
+			})
 		}
 	}
 }
@@ -96,9 +95,7 @@ func (w *worker) punishPlayer(ctx context.Context, id string) {
 	}
 	// give the observer time to get the new player position
 	time.Sleep(5 * time.Second)
-	w.mutex.Lock()
-	delete(w.outsidePlayers, id)
-	w.mutex.Unlock()
+	w.outsidePlayers.Delete(id)
 }
 
 func (w *worker) pollSession(ctx context.Context) {
@@ -163,18 +160,14 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	}
 	for _, f := range fences {
 		if f.Includes(g) {
-			w.mutex.Lock()
-			delete(w.outsidePlayers, p.Id)
-			w.mutex.Unlock()
+			w.outsidePlayers.Delete(p.Id)
 			return
 		}
 	}
-	w.mutex.Lock()
-	if _, ok := w.outsidePlayers[p.Id]; ok {
+	if _, ok := w.outsidePlayers.Load(p.Id); ok {
 		return
 	}
-	w.outsidePlayers[p.Id] = time.Now()
-	w.mutex.Unlock()
+	w.outsidePlayers.Store(p.Id, time.Now())
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf(w.c.WarningMessage(), w.punishAfterSeconds.String()))
