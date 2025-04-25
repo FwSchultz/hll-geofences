@@ -32,7 +32,7 @@ func main() {
 		}
 	}()
 
-	ctx := context.Background()
+	ctx, cancel := context.WithCancel(context.Background())
 	for _, server := range c.Servers {
 		pool, err := rconv2.NewConnectionPool(rconv2.ConnectionPoolOptions{
 			Logger:   logger,
@@ -53,4 +53,5 @@ func main() {
 	<-stop
 
 	logger.Info("graceful-shutdown")
+	cancel()
 }
