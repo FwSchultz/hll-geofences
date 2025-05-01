@@ -175,7 +175,7 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	if fp, ok := w.firstCoord.Load(p.Id); !ok {
 		w.firstCoord.Store(p.Id, &p.Position)
 		return
-	} else if fp.Equal(p.Position) {
+	} else if fp != nil && p.Position.Equal(*fp) {
 		return
 	} else {
 		// the player moved (e.g., spawned somewhere), makes sure we start tracking
@@ -184,9 +184,9 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	}
 
 	g := p.Position.Grid(w.current)
-	op := outsidePlayer{FirstOutside: time.Now(), Name: p.Name, LastGrid: g}
-	if _, ok := w.outsidePlayers.Load(p.Id); ok {
-		w.outsidePlayers.Store(p.Id, op)
+	if o, ok := w.outsidePlayers.Load(p.Id); ok {
+		o.LastGrid = g
+		w.outsidePlayers.Store(p.Id, o)
 		return
 	}
 
@@ -206,7 +206,7 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 			return
 		}
 	}
-	w.outsidePlayers.Store(p.Id, op)
+	w.outsidePlayers.Store(p.Id, outsidePlayer{FirstOutside: time.Now(), Name: p.Name, LastGrid: g})
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf(w.c.WarningMessage(), w.punishAfterSeconds.String()))
