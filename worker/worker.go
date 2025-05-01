@@ -24,12 +24,17 @@ type worker struct {
 	playerTicker  *time.Ticker
 	punishTicker  *time.Ticker
 
-	current           *api.GetSessionResponse
-	outsidePlayers    sync.Map
-	firstCoordSkipped sync.Map
+	current        *api.GetSessionResponse
+	outsidePlayers sync.Map
+	firstCoord     sync.Map
 }
 
-// alliedTeams defines the teams considered as Allied factions
+type outsidePlayer struct {
+	Name         string
+	LastGrid     api.WorldPosition
+	FirstOutside time.Time
+}
+
 var alliedTeams = []api.PlayerTeam{
 	api.PlayerTeamB8a,
 	api.PlayerTeamDak,
@@ -38,7 +43,6 @@ var alliedTeams = []api.PlayerTeam{
 	api.PlayerTeamUs,
 }
 
-// axisTeams defines the teams considered as Axis factions
 var axisTeams = []api.PlayerTeam{
 	api.PlayerTeamGer,
 }
@@ -54,11 +58,11 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		punishAfterSeconds: time.Duration(punishAfterSeconds) * time.Second,
 		c:                  c,
 
-		sessionTicker:     time.NewTicker(1 * time.Second),
-		playerTicker:      time.NewTicker(500 * time.Millisecond),
-		punishTicker:      time.NewTicker(time.Second),
-		outsidePlayers:    sync.Map{},
-		firstCoordSkipped: sync.Map{},
+		sessionTicker:  time.NewTicker(1 * time.Second),
+		playerTicker:   time.NewTicker(500 * time.Millisecond),
+		punishTicker:   time.NewTicker(time.Second),
+		outsidePlayers: sync.Map{},
+		firstCoord:     sync.Map{},
 	}
 }
 
@@ -95,9 +99,9 @@ func (w *worker) punishPlayers(ctx context.Context) {
 		case <-w.punishTicker.C:
 			w.outsidePlayers.Range(func(k, v interface{}) bool {
 				id := k.(string)
-				t := v.(time.Time)
-				if time.Since(t) > w.punishAfterSeconds && time.Since(t) < w.punishAfterSeconds+5*time.Second {
-					go w.punishPlayer(ctx, id)
+				o := v.(outsidePlayer)
+				if time.Since(o.FirstOutside) > w.punishAfterSeconds && time.Since(o.FirstOutside) < w.punishAfterSeconds+5*time.Second {
+					go w.punishPlayer(ctx, id, o)
 				}
 				return true
 			})
@@ -105,46 +109,18 @@ func (w *worker) punishPlayers(ctx context.Context) {
 	}
 }
 
-func (w *worker) punishPlayer(ctx context.Context, id string) {
-	var playerName string
-	var grid string
-	// Fetch player info to get name and grid position
+func (w *worker) punishPlayer(ctx context.Context, id string, o outsidePlayer) {
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
-		players, err := c.Players(ctx)
-		if err != nil {
-			return err
-		}
-		for _, p := range players.Players {
-			if p.Id == id && p.Position.IsSpawned() {
-				playerName = p.Name
-				grid = p.Position.Grid(w.current).String()
-				break
-			}
-		}
-		return nil
-	})
-	if err != nil {
-		w.l.Error("fetch-player-for-punish", "player_id", id, "error", err)
-		return
-	}
-
-	// Punish the player
-	err = w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		return c.PunishPlayer(ctx, id, fmt.Sprintf(w.c.PunishMessage(), w.punishAfterSeconds.String()))
 	})
 	if err != nil {
 		w.l.Error("punish-player", "player_id", id, "error", err)
 		return
 	}
-
-	// Log the punishment event if player info was found
-	if playerName != "" && grid != "" {
-		w.l.Info("punish-player", "player", playerName, "grid", grid)
-	}
+	w.l.Info("punish-player", "player", o.Name, "grid", o.LastGrid)
 
 	time.Sleep(5 * time.Second)
 	w.outsidePlayers.Delete(id)
-	w.firstCoordSkipped.Delete(id)
 }
 
 func (w *worker) pollSession(ctx context.Context) {
@@ -190,43 +166,46 @@ func (w *worker) pollPlayers(ctx context.Context) {
 }
 
 func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
-	// If player is not spawned, reset first coordinate tracking and return
 	if !p.Position.IsSpawned() {
-		w.firstCoordSkipped.Delete(p.Id)
-		w.outsidePlayers.Delete(p.Id)
+		w.firstCoord.Store(p.Id, nil)
 		return
 	}
 
-	// Check if first coordinate has been skipped
-	if _, ok := w.firstCoordSkipped.Load(p.Id); !ok {
-		w.firstCoordSkipped.Store(p.Id, true)
+	// If this is the first time we've seen this player, or if it is still the same position (spawn screen e.g.)
+	// ignore them. The game engine returns the position of a random HQ for players first joining the server, which
+	// might trigger an out-of-fence warning when we do not ignore that here.
+	if rfp, ok := w.firstCoord.Load(p.Id); !ok {
+		w.firstCoord.Store(p.Id, p.Position)
+		return
+	} else if fp, ok := rfp.(api.WorldPosition); ok && fp.Equal(p.Position) {
+		return
+	} else if ok {
+		// the player moved (e.g., spawned somewhere), makes sure we start tracking
+		// the position of this player and evaluate them against fences.
+		w.firstCoord.Store(p.Id, nil)
+	}
+
+	if _, ok := w.outsidePlayers.Load(p.Id); ok {
 		return
 	}
 
-	// Calculate player's grid position
 	g := p.Position.Grid(w.current)
 
-	// Determine applicable fences based on team
 	var fences []data.Fence
 	if slices.Contains(alliedTeams, p.Team) {
 		fences = w.alliesFences
 	} else if slices.Contains(axisTeams, p.Team) {
 		fences = w.axisFences
-	} else {
-		// Silently skip players with unknown teams
-		return
 	}
 	if len(fences) == 0 {
 		return
 	}
+
 	for _, f := range fences {
 		if f.Includes(g) {
 			w.outsidePlayers.Delete(p.Id)
 			return
 		}
-	}
-	if _, ok := w.outsidePlayers.Load(p.Id); ok {
-		return
 	}
 	w.outsidePlayers.Store(p.Id, time.Now())
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
