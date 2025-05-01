@@ -6,9 +6,9 @@ import (
 	"github.com/floriansw/go-hll-rcon/rconv2"
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
 	"github.com/floriansw/hll-geofences/data"
+	"github.com/floriansw/hll-geofences/sync"
 	"log/slog"
 	"slices"
-	"sync"
 	"time"
 )
 
@@ -25,13 +25,13 @@ type worker struct {
 	punishTicker  *time.Ticker
 
 	current        *api.GetSessionResponse
-	outsidePlayers sync.Map
-	firstCoord     sync.Map
+	outsidePlayers sync.Map[string, outsidePlayer]
+	firstCoord     sync.Map[string, *api.WorldPosition]
 }
 
 type outsidePlayer struct {
 	Name         string
-	LastGrid     api.WorldPosition
+	LastGrid     api.Grid
 	FirstOutside time.Time
 }
 
@@ -61,8 +61,8 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		sessionTicker:  time.NewTicker(1 * time.Second),
 		playerTicker:   time.NewTicker(500 * time.Millisecond),
 		punishTicker:   time.NewTicker(time.Second),
-		outsidePlayers: sync.Map{},
-		firstCoord:     sync.Map{},
+		outsidePlayers: sync.Map[string, outsidePlayer]{},
+		firstCoord:     sync.Map[string, *api.WorldPosition]{},
 	}
 }
 
@@ -97,9 +97,7 @@ func (w *worker) punishPlayers(ctx context.Context) {
 			w.punishTicker.Stop()
 			return
 		case <-w.punishTicker.C:
-			w.outsidePlayers.Range(func(k, v interface{}) bool {
-				id := k.(string)
-				o := v.(outsidePlayer)
+			w.outsidePlayers.Range(func(id string, o outsidePlayer) bool {
 				if time.Since(o.FirstOutside) > w.punishAfterSeconds && time.Since(o.FirstOutside) < w.punishAfterSeconds+5*time.Second {
 					go w.punishPlayer(ctx, id, o)
 				}
@@ -117,7 +115,7 @@ func (w *worker) punishPlayer(ctx context.Context, id string, o outsidePlayer) {
 		w.l.Error("punish-player", "player_id", id, "error", err)
 		return
 	}
-	w.l.Info("punish-player", "player", o.Name, "grid", o.LastGrid)
+	w.l.Info("punish-player", "player", o.Name, "grid", o.LastGrid.String())
 
 	time.Sleep(5 * time.Second)
 	w.outsidePlayers.Delete(id)
@@ -174,22 +172,23 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 	// If this is the first time we've seen this player, or if it is still the same position (spawn screen e.g.)
 	// ignore them. The game engine returns the position of a random HQ for players first joining the server, which
 	// might trigger an out-of-fence warning when we do not ignore that here.
-	if rfp, ok := w.firstCoord.Load(p.Id); !ok {
-		w.firstCoord.Store(p.Id, p.Position)
+	if fp, ok := w.firstCoord.Load(p.Id); !ok {
+		w.firstCoord.Store(p.Id, &p.Position)
 		return
-	} else if fp, ok := rfp.(api.WorldPosition); ok && fp.Equal(p.Position) {
+	} else if fp.Equal(p.Position) {
 		return
-	} else if ok {
+	} else {
 		// the player moved (e.g., spawned somewhere), makes sure we start tracking
 		// the position of this player and evaluate them against fences.
 		w.firstCoord.Store(p.Id, nil)
 	}
 
+	g := p.Position.Grid(w.current)
+	op := outsidePlayer{FirstOutside: time.Now(), Name: p.Name, LastGrid: g}
 	if _, ok := w.outsidePlayers.Load(p.Id); ok {
+		w.outsidePlayers.Store(p.Id, op)
 		return
 	}
-
-	g := p.Position.Grid(w.current)
 
 	var fences []data.Fence
 	if slices.Contains(alliedTeams, p.Team) {
@@ -207,7 +206,7 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 			return
 		}
 	}
-	w.outsidePlayers.Store(p.Id, time.Now())
+	w.outsidePlayers.Store(p.Id, op)
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		return c.MessagePlayer(ctx, p.Name, fmt.Sprintf(w.c.WarningMessage(), w.punishAfterSeconds.String()))
