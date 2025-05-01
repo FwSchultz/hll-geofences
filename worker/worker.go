@@ -154,6 +154,15 @@ func (w *worker) pollPlayers(ctx context.Context) {
 				for _, player := range players.Players {
 					go w.checkPlayer(ctx, player)
 				}
+				w.firstCoord.Range(func(id string, p *api.WorldPosition) bool {
+					for _, player := range players.Players {
+						if player.Id == id {
+							return true
+						}
+					}
+					w.firstCoord.Delete(id)
+					return true
+				})
 				return nil
 			})
 			if err != nil {
