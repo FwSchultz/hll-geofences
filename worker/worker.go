@@ -192,13 +192,6 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 		w.firstCoord.Store(p.Id, nil)
 	}
 
-	g := p.Position.Grid(w.current)
-	if o, ok := w.outsidePlayers.Load(p.Id); ok {
-		o.LastGrid = g
-		w.outsidePlayers.Store(p.Id, o)
-		return
-	}
-
 	var fences []data.Fence
 	if slices.Contains(alliedTeams, p.Team) {
 		fences = w.alliesFences
@@ -209,12 +202,19 @@ func (w *worker) checkPlayer(ctx context.Context, p api.GetPlayerResponse) {
 		return
 	}
 
+	g := p.Position.Grid(w.current)
 	for _, f := range fences {
 		if f.Includes(g) {
 			w.outsidePlayers.Delete(p.Id)
 			return
 		}
 	}
+	if o, ok := w.outsidePlayers.Load(p.Id); ok {
+		o.LastGrid = g
+		w.outsidePlayers.Store(p.Id, o)
+		return
+	}
+
 	w.outsidePlayers.Store(p.Id, outsidePlayer{FirstOutside: time.Now(), Name: p.Name, LastGrid: g})
 	w.l.Info("player-outside-fence", "player", p.Name, "grid", g)
 	err := w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
