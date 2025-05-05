@@ -1,9 +1,737 @@
+player_count_threshold: 50
+
 Servers:
     - Host: 
       Port: 
       Password: 
       PunishAfterSeconds: 10
       AxisFence:
+        - X: A
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: C
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: D
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: E
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: F
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: G
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: H
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: J
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: A
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: C
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: D
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: E
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: F
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: G
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: H
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: J
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 1
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 3
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 4
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 5
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 6
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 7
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 8
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 10
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 1
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 3
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 4
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 5
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 6
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 7
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 8
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 10
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 1
           Condition:
@@ -15,7 +743,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 2
           Condition:
@@ -27,7 +755,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 3
           Condition:
@@ -39,7 +767,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 4
           Condition:
@@ -51,7 +779,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -63,7 +791,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -75,7 +803,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 10
           Condition:
@@ -87,7 +815,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 1
           Condition:
@@ -99,7 +827,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 2
           Condition:
@@ -111,7 +839,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 3
           Condition:
@@ -123,7 +851,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 4
           Condition:
@@ -135,7 +863,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -147,7 +875,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -159,7 +887,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 10
           Condition:
@@ -171,7 +899,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 1
           Condition:
@@ -183,7 +911,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 2
           Condition:
@@ -195,7 +923,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -207,7 +935,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -219,7 +947,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -231,7 +959,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -243,7 +971,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 10
           Condition:
@@ -255,7 +983,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 1
           Condition:
@@ -267,7 +995,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 2
           Condition:
@@ -279,7 +1007,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -291,7 +1019,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -303,7 +1031,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -315,7 +1043,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -327,7 +1055,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 10
           Condition:
@@ -339,7 +1067,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 1
           Condition:
@@ -351,7 +1079,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 2
           Condition:
@@ -363,7 +1091,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 3
           Condition:
@@ -375,7 +1103,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 4
           Condition:
@@ -387,7 +1115,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -399,7 +1127,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -411,7 +1139,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 10
           Condition:
@@ -423,7 +1151,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 1
           Condition:
@@ -435,7 +1163,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 2
           Condition:
@@ -447,7 +1175,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 3
           Condition:
@@ -459,7 +1187,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 4
           Condition:
@@ -471,7 +1199,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -483,7 +1211,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -495,7 +1223,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 10
           Condition:
@@ -507,7 +1235,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 3
           Condition:
@@ -520,7 +1248,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 4
           Condition:
@@ -533,7 +1261,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 5
           Condition:
@@ -546,7 +1274,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 6
           Condition:
@@ -559,7 +1287,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 7
           Condition:
@@ -572,7 +1300,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 8
           Condition:
@@ -585,7 +1313,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 3
           Condition:
@@ -598,7 +1326,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 4
           Condition:
@@ -611,7 +1339,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 5
           Condition:
@@ -624,7 +1352,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 6
           Condition:
@@ -637,7 +1365,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 7
           Condition:
@@ -650,7 +1378,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 8
           Condition:
@@ -663,7 +1391,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 3
           Condition:
@@ -676,7 +1404,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 4
           Condition:
@@ -689,7 +1417,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -702,7 +1430,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -715,7 +1443,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 7
           Condition:
@@ -728,7 +1456,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 8
           Condition:
@@ -741,7 +1469,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 3
           Condition:
@@ -754,7 +1482,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 4
           Condition:
@@ -767,7 +1495,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -780,7 +1508,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -793,7 +1521,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 7
           Condition:
@@ -806,7 +1534,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 8
           Condition:
@@ -819,7 +1547,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -832,7 +1560,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -845,7 +1573,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -858,7 +1586,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -871,7 +1599,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -884,7 +1612,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -897,7 +1625,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -910,7 +1638,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -923,7 +1651,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -936,7 +1664,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -949,7 +1677,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -962,7 +1690,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -975,7 +1703,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 3
           Condition:
@@ -988,7 +1716,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 4
           Condition:
@@ -1001,7 +1729,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 5
           Condition:
@@ -1014,7 +1742,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 6
           Condition:
@@ -1027,7 +1755,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 7
           Condition:
@@ -1040,7 +1768,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 8
           Condition:
@@ -1053,7 +1781,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 3
           Condition:
@@ -1068,7 +1796,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 4
           Condition:
@@ -1083,7 +1811,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 5
           Condition:
@@ -1098,7 +1826,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 6
           Condition:
@@ -1113,7 +1841,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 7
           Condition:
@@ -1128,7 +1856,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 8
           Condition:
@@ -1143,7 +1871,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 3
           Condition:
@@ -1158,7 +1886,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 4
           Condition:
@@ -1173,7 +1901,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 5
           Condition:
@@ -1188,7 +1916,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 6
           Condition:
@@ -1203,7 +1931,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 7
           Condition:
@@ -1218,7 +1946,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 8
           Condition:
@@ -1233,7 +1961,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 3
           Condition:
@@ -1248,7 +1976,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 4
           Condition:
@@ -1263,7 +1991,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -1278,7 +2006,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -1293,7 +2021,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 7
           Condition:
@@ -1308,7 +2036,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 8
           Condition:
@@ -1323,7 +2051,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 3
           Condition:
@@ -1338,7 +2066,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 4
           Condition:
@@ -1353,7 +2081,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -1368,7 +2096,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -1383,7 +2111,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 7
           Condition:
@@ -1398,7 +2126,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 8
           Condition:
@@ -1413,7 +2141,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -1428,7 +2156,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -1443,7 +2171,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -1458,7 +2186,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -1473,7 +2201,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -1488,7 +2216,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -1503,7 +2231,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -1518,7 +2246,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -1533,7 +2261,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -1548,7 +2276,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -1563,7 +2291,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -1578,7 +2306,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -1593,7 +2321,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 3
           Condition:
@@ -1608,7 +2336,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 4
           Condition:
@@ -1623,7 +2351,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 5
           Condition:
@@ -1638,7 +2366,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 6
           Condition:
@@ -1653,7 +2381,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 7
           Condition:
@@ -1668,7 +2396,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 8
           Condition:
@@ -1683,7 +2411,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 1
           Condition:
@@ -1697,7 +2425,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 10
           Condition:
@@ -1711,7 +2439,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 9
           Condition:
@@ -1725,7 +2453,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 8
           Condition:
@@ -1739,7 +2467,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 7
           Condition:
@@ -1753,7 +2481,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -1767,7 +2495,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -1781,7 +2509,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 1
           Condition:
@@ -1795,7 +2523,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 10
           Condition:
@@ -1809,7 +2537,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 9
           Condition:
@@ -1823,7 +2551,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 8
           Condition:
@@ -1837,7 +2565,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 7
           Condition:
@@ -1851,7 +2579,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -1865,7 +2593,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -1879,7 +2607,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 1
           Condition:
@@ -1893,7 +2621,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 10
           Condition:
@@ -1907,7 +2635,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 9
           Condition:
@@ -1921,7 +2649,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -1935,7 +2663,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -1949,7 +2677,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -1963,7 +2691,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -1977,7 +2705,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 1
           Condition:
@@ -1991,7 +2719,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 10
           Condition:
@@ -2005,7 +2733,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 9
           Condition:
@@ -2019,7 +2747,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -2033,7 +2761,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -2047,7 +2775,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -2061,7 +2789,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -2075,7 +2803,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 1
           Condition:
@@ -2089,7 +2817,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 10
           Condition:
@@ -2103,7 +2831,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 9
           Condition:
@@ -2117,7 +2845,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 8
           Condition:
@@ -2131,7 +2859,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 7
           Condition:
@@ -2145,7 +2873,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -2159,7 +2887,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -2173,7 +2901,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 1
           Condition:
@@ -2187,7 +2915,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 10
           Condition:
@@ -2201,7 +2929,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 9
           Condition:
@@ -2215,7 +2943,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 8
           Condition:
@@ -2229,7 +2957,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 7
           Condition:
@@ -2243,7 +2971,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -2257,7 +2985,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -2271,8 +2999,734 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
       AlliesFence:
+        - X: A
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: C
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: D
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: E
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: F
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: G
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: H
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: J
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: A
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: C
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: D
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: E
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: F
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: G
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: H
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: J
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+                    - CARENTAN
+                    - HILL 400
+                    - HÜRTGEN FOREST
+                    - MORTAIN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 1
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 3
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 4
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 5
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 6
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 7
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 8
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: B
+          "Y": 10
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 1
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+                    - EL ALAMEIN
+                    - OMAHA BEACH
+                    - SAINTE-MÈRE-ÉGLISE
+                    - STALINGRAD
+                    - TOBRUK
+                    - UTAH BEACH
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 2
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 3
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 4
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 5
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 6
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 7
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 8
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 9
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
+        - X: I
+          "Y": 10
+          Condition:
+            Equals:
+                game_mode:
+                    - Warfare
+                map_name:
+                    - ELSENBORN RIDGE
+                    - KHARKOV
+                    - KURSK
+                    - PURPLE HEART LANE
+                    - ST MARIE DU MONT
+                    - DRIEL
+                    - FOY
+                    - REMAGEN
+            LessThan:
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 1
           Condition:
@@ -2284,7 +3738,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 10
           Condition:
@@ -2296,7 +3750,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 9
           Condition:
@@ -2308,7 +3762,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 8
           Condition:
@@ -2320,7 +3774,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 7
           Condition:
@@ -2332,7 +3786,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -2344,7 +3798,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -2356,7 +3810,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 1
           Condition:
@@ -2368,7 +3822,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 10
           Condition:
@@ -2380,7 +3834,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 9
           Condition:
@@ -2392,7 +3846,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 8
           Condition:
@@ -2404,7 +3858,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 7
           Condition:
@@ -2416,7 +3870,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -2428,7 +3882,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -2440,7 +3894,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 1
           Condition:
@@ -2452,7 +3906,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 10
           Condition:
@@ -2464,7 +3918,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 9
           Condition:
@@ -2476,7 +3930,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -2488,7 +3942,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -2500,7 +3954,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -2512,7 +3966,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -2524,7 +3978,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 1
           Condition:
@@ -2536,7 +3990,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 10
           Condition:
@@ -2548,7 +4002,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 9
           Condition:
@@ -2560,7 +4014,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -2572,7 +4026,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -2584,7 +4038,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -2596,7 +4050,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -2608,7 +4062,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 1
           Condition:
@@ -2620,7 +4074,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 10
           Condition:
@@ -2632,7 +4086,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 9
           Condition:
@@ -2644,7 +4098,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 8
           Condition:
@@ -2656,7 +4110,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 7
           Condition:
@@ -2668,7 +4122,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -2680,7 +4134,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -2692,7 +4146,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 1
           Condition:
@@ -2704,7 +4158,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 10
           Condition:
@@ -2716,7 +4170,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 9
           Condition:
@@ -2728,7 +4182,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 8
           Condition:
@@ -2740,7 +4194,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 7
           Condition:
@@ -2752,7 +4206,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -2764,7 +4218,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -2776,7 +4230,7 @@ Servers:
                     - FOY
                     - REMAGEN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 3
           Condition:
@@ -2789,7 +4243,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 4
           Condition:
@@ -2802,7 +4256,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 5
           Condition:
@@ -2815,7 +4269,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 6
           Condition:
@@ -2828,7 +4282,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 7
           Condition:
@@ -2841,7 +4295,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 8
           Condition:
@@ -2854,7 +4308,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 3
           Condition:
@@ -2867,7 +4321,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 4
           Condition:
@@ -2880,7 +4334,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 5
           Condition:
@@ -2893,7 +4347,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 6
           Condition:
@@ -2906,7 +4360,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 7
           Condition:
@@ -2919,7 +4373,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: B
           "Y": 8
           Condition:
@@ -2932,7 +4386,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 3
           Condition:
@@ -2945,7 +4399,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 4
           Condition:
@@ -2958,7 +4412,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -2971,7 +4425,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -2984,7 +4438,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 7
           Condition:
@@ -2997,7 +4451,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 8
           Condition:
@@ -3010,7 +4464,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 3
           Condition:
@@ -3023,7 +4477,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 4
           Condition:
@@ -3036,7 +4490,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -3049,7 +4503,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -3062,7 +4516,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 7
           Condition:
@@ -3075,7 +4529,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 8
           Condition:
@@ -3088,7 +4542,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -3101,7 +4555,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -3114,7 +4568,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -3127,7 +4581,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -3140,7 +4594,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -3153,7 +4607,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -3166,7 +4620,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -3179,7 +4633,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -3192,7 +4646,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -3205,7 +4659,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -3218,7 +4672,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -3231,7 +4685,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -3244,7 +4698,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 3
           Condition:
@@ -3257,7 +4711,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 4
           Condition:
@@ -3270,7 +4724,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 5
           Condition:
@@ -3283,7 +4737,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 6
           Condition:
@@ -3296,7 +4750,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 7
           Condition:
@@ -3309,7 +4763,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 8
           Condition:
@@ -3322,7 +4776,7 @@ Servers:
                     - HÜRTGEN FOREST
                     - MORTAIN
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 3
           Condition:
@@ -3337,7 +4791,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 4
           Condition:
@@ -3352,7 +4806,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 5
           Condition:
@@ -3367,7 +4821,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 6
           Condition:
@@ -3382,7 +4836,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 7
           Condition:
@@ -3397,7 +4851,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: J
           "Y": 8
           Condition:
@@ -3412,7 +4866,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 3
           Condition:
@@ -3427,7 +4881,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 4
           Condition:
@@ -3442,7 +4896,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 5
           Condition:
@@ -3457,7 +4911,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 6
           Condition:
@@ -3472,7 +4926,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 7
           Condition:
@@ -3487,7 +4941,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: I
           "Y": 8
           Condition:
@@ -3502,7 +4956,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 3
           Condition:
@@ -3517,7 +4971,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 4
           Condition:
@@ -3532,7 +4986,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -3547,7 +5001,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -3562,7 +5016,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 7
           Condition:
@@ -3577,7 +5031,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 8
           Condition:
@@ -3592,7 +5046,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 3
           Condition:
@@ -3607,7 +5061,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 4
           Condition:
@@ -3622,7 +5076,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -3637,7 +5091,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -3652,7 +5106,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 7
           Condition:
@@ -3667,7 +5121,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 8
           Condition:
@@ -3682,7 +5136,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -3697,7 +5151,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -3712,7 +5166,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -3727,7 +5181,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -3742,7 +5196,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 7
           Condition:
@@ -3757,7 +5211,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 8
           Condition:
@@ -3772,7 +5226,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -3787,7 +5241,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -3802,7 +5256,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -3817,7 +5271,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -3832,7 +5286,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 7
           Condition:
@@ -3847,7 +5301,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 8
           Condition:
@@ -3862,7 +5316,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 3
           Condition:
@@ -3877,7 +5331,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 4
           Condition:
@@ -3892,7 +5346,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 5
           Condition:
@@ -3907,7 +5361,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 6
           Condition:
@@ -3922,7 +5376,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 7
           Condition:
@@ -3937,7 +5391,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: A
           "Y": 8
           Condition:
@@ -3952,7 +5406,7 @@ Servers:
                     - TOBRUK
                     - UTAH BEACH
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 1
           Condition:
@@ -3966,7 +5420,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 2
           Condition:
@@ -3980,7 +5434,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 3
           Condition:
@@ -3994,7 +5448,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 4
           Condition:
@@ -4008,7 +5462,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 5
           Condition:
@@ -4022,7 +5476,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 6
           Condition:
@@ -4036,7 +5490,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: C
           "Y": 10
           Condition:
@@ -4050,7 +5504,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 1
           Condition:
@@ -4064,7 +5518,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 2
           Condition:
@@ -4078,7 +5532,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 3
           Condition:
@@ -4092,7 +5546,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 4
           Condition:
@@ -4106,7 +5560,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 5
           Condition:
@@ -4120,7 +5574,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 6
           Condition:
@@ -4134,7 +5588,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: D
           "Y": 10
           Condition:
@@ -4148,7 +5602,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 1
           Condition:
@@ -4162,7 +5616,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 2
           Condition:
@@ -4176,7 +5630,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 3
           Condition:
@@ -4190,7 +5644,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 4
           Condition:
@@ -4204,7 +5658,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 5
           Condition:
@@ -4218,7 +5672,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 6
           Condition:
@@ -4232,7 +5686,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: E
           "Y": 10
           Condition:
@@ -4246,7 +5700,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 1
           Condition:
@@ -4260,7 +5714,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 2
           Condition:
@@ -4274,7 +5728,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 3
           Condition:
@@ -4288,7 +5742,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 4
           Condition:
@@ -4302,7 +5756,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 5
           Condition:
@@ -4316,7 +5770,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 6
           Condition:
@@ -4330,7 +5784,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: F
           "Y": 10
           Condition:
@@ -4344,7 +5798,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 1
           Condition:
@@ -4358,7 +5812,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 2
           Condition:
@@ -4372,7 +5826,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 3
           Condition:
@@ -4386,7 +5840,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 4
           Condition:
@@ -4400,7 +5854,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 5
           Condition:
@@ -4414,7 +5868,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 6
           Condition:
@@ -4428,7 +5882,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: G
           "Y": 10
           Condition:
@@ -4442,7 +5896,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 1
           Condition:
@@ -4456,7 +5910,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 2
           Condition:
@@ -4470,7 +5924,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 3
           Condition:
@@ -4484,7 +5938,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 4
           Condition:
@@ -4498,7 +5952,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 5
           Condition:
@@ -4512,7 +5966,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 6
           Condition:
@@ -4526,7 +5980,7 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
         - X: H
           "Y": 10
           Condition:
@@ -4540,4 +5994,4 @@ Servers:
                     - PURPLE HEART LANE
                     - ST MARIE DU MONT
             LessThan:
-                player_count: 50
+                player_count: ${player_count_threshold}
