@@ -1,13 +1,12 @@
-FROM golang:1.24-alpine AS build
-
-WORKDIR /code
-
-COPY . .
-RUN go build -o app cmd/cmd.go
-
-FROM alpine:3.18
+FROM golang:1.24-alpine
 
 WORKDIR /app
-COPY --from=build /code/app .
 
-ENTRYPOINT ["/app/app"]
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY . .
+
+RUN go build -o hll-geofences ./cmd/cmd.go
+
+CMD ["./hll-geofences"]
