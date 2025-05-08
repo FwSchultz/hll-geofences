@@ -1,0 +1,13 @@
+services:
+  hll-geofences:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hll-geofences-extended
+    volumes:
+      - ./config.yml:/app/config.yml
+    environment:
+      - GO_ENV=production
+    ports:
+      - "8083:8083"
+    restart: unless-stopped
