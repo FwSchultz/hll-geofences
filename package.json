@@ -1,0 +1,24 @@
+{
+  "name": "discord-seeding-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for managing extended seeding with Docker integration",
+  "main": "main.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node main.mjs",
+    "dev": "nodemon main.mjs"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
