@@ -43,10 +43,22 @@ This setup configures the server for midcap-only gameplay with player counts of 
    Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
 
 5. **Set Up Docker**:
-   Rename the Docker configuration file:
-   ```bash
-   mv midcap.docker-compose.yml docker-compose.yml
-   ```
+   - Rename the Docker configuration file:
+     ```bash
+     mv midcap.docker-compose.yml docker-compose.yml
+     ```
+   - Build the Docker image (required after changing files):
+     ```bash
+     docker compose build
+     ```
+   - Start the Docker container:
+     ```bash
+     docker compose up -d
+     ```
+   - Stop the Docker container (when needed):
+     ```bash
+     docker compose down
+     ```
 
 6. **Set Up Discord Bot (Optional)**:
    - Rename the environment file:
@@ -99,10 +111,22 @@ This setup blocks the last two lines for gameplay with player counts of 60, 70, 
    Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
 
 5. **Set Up Docker**:
-   Rename the Docker configuration file:
-   ```bash
-   mv extended.docker-compose.yml docker-compose.yml
-   ```
+   - Rename the Docker configuration file:
+     ```bash
+     mv extended.docker-compose.yml docker-compose.yml
+     ```
+   - Build the Docker image (required after changing files):
+     ```bash
+     docker compose build
+     ```
+   - Start the Docker container:
+     ```bash
+     docker compose up -d
+     ```
+   - Stop the Docker container (when needed):
+     ```bash
+     docker compose down
+     ```
 
 6. **Set Up Discord Bot (Optional)**:
    - Rename the environment file:
@@ -181,6 +205,7 @@ To run either or both scripts in the background with automatic restarts, use PM2
 ## Notes
 
 - Ensure all configuration files (`config.yml`, `.env`) are correctly filled out before starting.
+- Run `docker compose build` after modifying any Docker-related files to ensure changes are applied.
 - Docker and Discord bot setups are optional and can be skipped if not needed.
 - PM2 is recommended for production to ensure scripts run continuously.
 
