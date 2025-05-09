@@ -61,7 +61,7 @@ This setup configures the server for midcap-only gameplay with player counts of 
      ```
 
 6. **Set Up Discord Bot (Optional)**:
-   - Rename the environment file:
+   - Rename and fill out the environment file: Channel ID must be not the same as Extended Seeding (script clears channel on startup)
      ```bash
      mv midcap.example.env .env
      ```
@@ -129,7 +129,7 @@ This setup blocks the last two lines for gameplay with player counts of 60, 70, 
      ```
 
 6. **Set Up Discord Bot (Optional)**:
-   - Rename the environment file:
+   - Rename and fill out the environment file: Channel ID must be not the same as Basic Seeding (script clears channel on startup)
      ```bash
      mv extended.example.env .env
      ```
