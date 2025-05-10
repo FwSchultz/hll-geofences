@@ -157,9 +157,9 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
 
   if (interaction.customId === START_BUTTON_ID) {
-    await executeDockerCommand('docker-compose up -d', interaction);
+    await executeDockerCommand('docker compose up -d', interaction);
   } else if (interaction.customId === STOP_BUTTON_ID) {
-    await executeDockerCommand('docker-compose down', interaction);
+    await executeDockerCommand('docker compose down', interaction);
   }
 });
 
