@@ -1,7 +1,7 @@
 package data
 
 import (
-	"github.com/2KU77B0N3S/go-hll-rcon/rconv2/api"
+	"github.com/floriansw/go-hll-rcon/rconv2/api"
 	"gopkg.in/yaml.v3"
 	"log/slog"
 	"os"
