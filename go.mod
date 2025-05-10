@@ -1,4 +1,4 @@
-module github.com/2KU77B0N3S/hll-geofences
+module github.com/floriansw/hll-geofences
 
 go 1.24.1
 
