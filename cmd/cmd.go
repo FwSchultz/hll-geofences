@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
-	"github.com/2KU77B0N3S/go-hll-rcon/rconv2"
-	"github.com/2KU77B0N3S/hll-geofences/data"
-	"github.com/2KU77B0N3S/hll-geofences/worker"
+	"github.com/floriansw/go-hll-rcon/rconv2"
+	"github.com/floriansw/hll-geofences/data"
+	"github.com/floriansw/hll-geofences/worker"
 	"log/slog"
 	"os"
 	"os/signal"
