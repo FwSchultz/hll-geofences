@@ -1,8 +1,8 @@
-# github.com/2KU77B0N3S/go-hll-rcon v0.0.0-20250501210100-80746ddffb63
+# github.com/floriansw/go-hll-rcon v0.0.0-20250501210100-80746ddffb63
 ## explicit; go 1.23.0
-github.com/2KU77B0N3S/go-hll-rcon/rcon
-github.com/2KU77B0N3S/go-hll-rcon/rconv2
-github.com/2KU77B0N3S/go-hll-rcon/rconv2/api
+github.com/floriansw/go-hll-rcon/rcon
+github.com/floriansw/go-hll-rcon/rconv2
+github.com/floriansw/go-hll-rcon/rconv2/api
 # github.com/fsnotify/fsnotify v1.4.9
 ## explicit; go 1.13
 github.com/fsnotify/fsnotify
