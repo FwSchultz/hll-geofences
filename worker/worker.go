@@ -3,13 +3,14 @@ package worker
 import (
 	"context"
 	"fmt"
+	"log/slog"
+	"slices"
+	"time"
+
 	"github.com/floriansw/go-hll-rcon/rconv2"
 	"github.com/floriansw/go-hll-rcon/rconv2/api"
 	"github.com/floriansw/hll-geofences/data"
 	"github.com/floriansw/hll-geofences/sync"
-	"log/slog"
-	"slices"
-	"time"
 )
 
 type worker struct {
@@ -59,7 +60,7 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		c:                  c,
 
 		sessionTicker:  time.NewTicker(1 * time.Second),
-		playerTicker:   time.NewTicker(500 * time.Millisecond),
+		playerTicker:   time.NewTicker(1000 * time.Millisecond),
 		punishTicker:   time.NewTicker(time.Second),
 		outsidePlayers: sync.Map[string, outsidePlayer]{},
 		firstCoord:     sync.Map[string, *api.WorldPosition]{},
@@ -77,11 +78,26 @@ func (w *worker) Run(ctx context.Context) {
 	go w.punishPlayers(ctx)
 }
 
+func (w *worker) clearSyncMaps() {
+	w.outsidePlayers.Range(func(id string, _ outsidePlayer) bool {
+		w.outsidePlayers.Delete(id)
+		return true
+	})
+	w.firstCoord.Range(func(id string, _ *api.WorldPosition) bool {
+		w.firstCoord.Delete(id)
+		return true
+	})
+}
+
 func (w *worker) populateSession(ctx context.Context) error {
 	return w.pool.WithConnection(ctx, func(c *rconv2.Connection) error {
 		si, err := c.SessionInfo(ctx)
 		if err != nil {
 			return err
+		}
+		if w.current != nil && w.current.MapName != si.MapName {
+			w.l.Info("map-changed", "old_map", w.current.MapName, "new_map", si.MapName)
+			w.clearSyncMaps()
 		}
 		w.current = si
 		w.axisFences = w.applicableFences(w.c.AxisFence)
