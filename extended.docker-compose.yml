@@ -1,5 +1,5 @@
 services:
-  hll-geofences:
+  hll-geofences-basic:
     build:
       context: .
       dockerfile: Dockerfile
