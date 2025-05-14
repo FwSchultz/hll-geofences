@@ -59,8 +59,8 @@ func NewWorker(l *slog.Logger, pool *rconv2.ConnectionPool, c data.Server) *work
 		punishAfterSeconds: time.Duration(punishAfterSeconds) * time.Second,
 		c:                  c,
 
-		sessionTicker:  time.NewTicker(1 * time.Second),
-		playerTicker:   time.NewTicker(1000 * time.Millisecond),
+		sessionTicker:  time.NewTicker(2 * time.Second),
+		playerTicker:   time.NewTicker(2000 * time.Millisecond),
 		punishTicker:   time.NewTicker(time.Second),
 		outsidePlayers: sync.Map[string, outsidePlayer]{},
 		firstCoord:     sync.Map[string, *api.WorldPosition]{},
