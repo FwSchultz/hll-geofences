@@ -1,11 +1,12 @@
 package data
 
 import (
-	"github.com/floriansw/go-hll-rcon/rconv2/api"
-	"gopkg.in/yaml.v3"
 	"log/slog"
 	"os"
 	"slices"
+
+	"github.com/floriansw/go-hll-rcon/rconv2/api"
+	"gopkg.in/yaml.v3"
 )
 
 type Fence struct {
@@ -80,6 +81,9 @@ type Server struct {
 }
 
 func (s Server) WarningMessage() string {
+	if warning := os.Getenv("WARNING_MESSAGE"); warning != "" {
+		return warning
+	}
 	if s.Messages == nil || s.Messages.Warning == nil {
 		return "You are outside of the designated play area! Please go back to the battlefield immediately.\n\nYou will be punished in %s"
 	}
@@ -87,6 +91,9 @@ func (s Server) WarningMessage() string {
 }
 
 func (s Server) PunishMessage() string {
+	if punish := os.Getenv("PUNISH_MESSAGE"); punish != "" {
+		return punish
+	}
 	if s.Messages == nil || s.Messages.Punish == nil {
 		return "%s outside the play area"
 	}

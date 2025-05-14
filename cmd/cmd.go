@@ -2,16 +2,23 @@ package main
 
 import (
 	"context"
-	"github.com/floriansw/go-hll-rcon/rconv2"
-	"github.com/floriansw/hll-geofences/data"
-	"github.com/floriansw/hll-geofences/worker"
 	"log/slog"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/floriansw/go-hll-rcon/rconv2"
+	"github.com/floriansw/hll-geofences/data"
+	"github.com/floriansw/hll-geofences/worker"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+
+	if err := godotenv.Load(); err != nil {
+		slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo})).Warn("load-env", "error", err)
+	}
+
 	level := slog.LevelInfo
 	if _, ok := os.LookupEnv("DEBUG"); ok {
 		level = slog.LevelDebug
