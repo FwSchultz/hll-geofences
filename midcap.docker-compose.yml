@@ -1,5 +1,5 @@
 services:
-  hll-geofences:
+  hll-geofences-midcap:
     build:
       context: .
       dockerfile: Dockerfile
