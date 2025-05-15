@@ -1,212 +1,335 @@
-# HLL Geofences
+<div align="center">
 
-This repository provides scripts for managing seeding configurations for Hell Let Loose (HLL) servers using geofencing. It includes two setups: **Basic Seeding** (Midcap only) and **Extended Seeding** (last two lines blocked). Both setups can be configured for different player counts and include Docker and Discord integration options. Below are the setup instructions for each.
+  <img src="https://github.com/FwSchultz/assets/blob/main/bots/2KU77B0N3S/Logo.png" alt="logo" width="200" height="auto" />
+  <h1>HLL-GEOFENCE</h1>
+  
+<!-- Badges -->
+<p>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/2KU77B0N3S/hll-geofences" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/2KU77B0N3S/hll-geofences" alt="last update" />
+  </a>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/network/members">
+    <img src="https://img.shields.io/github/forks/2KU77B0N3S/hll-geofences" alt="forks" />
+  </a>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/stargazers">
+    <img src="https://img.shields.io/github/stars/2KU77B0N3S/hll-geofences" alt="stars" />
+  </a>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/issues/">
+    <img src="https://img.shields.io/github/issues/2KU77B0N3S/hll-geofences" alt="open issues" />
+  </a>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/2KU77B0N3S/hll-geofences.svg" alt="license" />
+  </a>
+</p>
+   
+<h4>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences">Documentation</a>
+  <span> · </span>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/issues/">Report Bug</a>
+  <span> · </span>
+  <a href="https://github.com/2KU77B0N3S/hll-geofences/issues/">Request Feature</a>
+</h4>
+</div>
 
-## Prerequisites
+<br />
 
-- Git
-- Docker (for Docker-based deployment)
-- Node.js and npm (for Discord bot control)
-- PM2 (for persistent script execution)
-- Access to HLL server RCON (IP, port, password)
+# Table of Contents
+
+- [About the Project](#about-the-project)
+- [Tech Stack](#tech-stack)
+- [Basic Seeding Setup (Midcap Only)](#basic-seeding-setup-midcap-only)
+- [Set Up Discord Bot (Midcap Only)](#set-up-discord-bot-optional)
+- [Extended Seeding Setup (Last Two Lines Blocked)](#extended-seeding-setup-last-two-lines-blocked)
+- [Set Up Discord Bot (Extended Version)](#set-up-discord-bot-extended-version)
+- [Running Scripts Persistently with PM2](#running-scripts-persistently-with-pm2)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Contact](#contact)
+
+> [!TIP]  
+> To use both bots you need 2 bot directories and one main directory!
+<div>
+  <img src=https://github.com/FwSchultz/assets/blob/main/bots/2KU77B0N3S/geofence/geofence-struktur.png alt="logo" width="400" />
+</div>
+
+---
+
+## About the Project
+
+This repository (**HLL-GEOFENCE**) provides scripts for managing seeding configurations for Hell Let Loose (HLL) servers using geofencing. It includes two setups: Basic Seeding (Midcap only) and Extended Seeding (last two lines blocked). Both setups can be configured for different player counts and include Docker and Discord integration options. Below are the setup instructions for each.
+
+---
+
+## Tech Stack
+
+- **Programming language:** JavaScript  
+- **Libraries:** `discord.js`, `dotenv`, `node-fetch`, `requests`  
+- **Dev-Libraries:** `nodemon`
+
+---
 
 ## Basic Seeding Setup (Midcap Only)
 
-This setup configures the server for midcap-only gameplay with player counts of 40, 50, or 60.
+1. Clone the Repository:
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/2KU77B0N3S/hll-geofences
-   ```
+```bash
+git clone https://github.com/2KU77B0N3S/hll-geofences
+```
 
-2. **Rename the Folder**:
-   ```bash
-   mv hll-geofences hll-geofences-basic
-   cd hll-geofences-basic
-   ```
+2. Rename the Folder:
 
-3. **Select Player Count Configuration**:
-   Choose one of the following commands based on the desired player count:
-   ```bash
-   mv seeding.midcap.40player.config.yml config.yml
-   ```
-   or
-   ```bash
-   mv seeding.midcap.50player.config.yml config.yml
-   ```
-   or
-   ```bash
-   mv seeding.midcap.60player.config.yml config.yml
-   ```
+```bash
+mv hll-geofences hll-geofences-basic
+cd hll-geofences-basic
+```
 
-4. **Edit Configuration**:
-   Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
+3. Select Player Count Configuration:
 
-5. **Set Up Docker**:
-   - Rename the Docker configuration file:
-     ```bash
-     mv midcap.docker-compose.yml docker-compose.yml
-     ```
-   - Build the Docker image (required after changing files):
-     ```bash
-     docker compose build
-     ```
-   - Start the Docker container:
-     ```bash
-     docker compose up -d
-     ```
-   - Stop the Docker container (when needed):
-     ```bash
-     docker compose down
-     ```
+```bash
+# 40 Player
+mv seeding.midcap.40player.config.yml config.yml
+```
+or
+```bash
+# 50 Player
+mv seeding.midcap.50player.config.yml config.yml
+```
+or
+```bash
+# 60 Player
+mv seeding.midcap.60player.config.yml config.yml
+```
 
-6. **Set Up Discord Bot (Optional)**:
-   - Rename and fill out the environment file: Channel ID must be not the same as Extended Seeding (script clears channel on startup)
-     ```bash
-     mv midcap.example.env .env
-     ```
-   - Rename the script:
-     ```bash
-     mv midcap.main.mjs main.mjs
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Start the script:
-     ```bash
-     node main.mjs
-     ```
+4. Edit Configuration:  
+Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
+
+5. Rename the Docker configuration file:
+
+```bash
+mv midcap.docker-compose.yml docker-compose.yml
+```
+
+6. Build Docker image:
+
+```bash
+docker compose build
+```
+
+7. Start Docker:
+
+```bash
+docker compose up -d
+```
+
+8. Stop Docker (optional):
+
+```bash
+docker compose down
+```
+
+---
+
+## Set Up Discord Bot (Optional)
+
+1. Rename and fill out the environment file (`.env`):
+
+```bash
+mv midcap.example.env .env
+```
+
+2. Rename the script:
+
+```bash
+mv midcap.main.mjs main.mjs
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the script:
+
+```bash
+node main.mjs
+```
+
+---
+
+> [!NOTE]  
+> If you also want to use the extended version and are still in `hll-geofences-basic`, go back to the main directory:
+
+```bash
+cd ..
+```
+
+---
 
 ## Extended Seeding Setup (Last Two Lines Blocked)
 
-This setup blocks the last two lines for gameplay with player counts of 60, 70, or 80.
+1. Clone the Repository:
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/2KU77B0N3S/hll-geofences
-   ```
+```bash
+git clone https://github.com/2KU77B0N3S/hll-geofences
+```
 
-2. **Rename the Folder**:
-   ```bash
-   mv hll-geofences hll-geofences-extended
-   cd hll-geofences-extended
-   ```
+2. Rename the Folder:
 
-3. **Select Player Count Configuration**:
-   Choose one of the following commands based on the desired player count:
-   ```bash
-   mv seeding.3caps.60player.config.yml config.yml
-   ```
-   or
-   ```bash
-   mv seeding.3caps.70player.config.yml config.yml
-   ```
-   or
-   ```bash
-   mv seeding.3caps.80player.config.yml config.yml
-   ```
+```bash
+mv hll-geofences hll-geofences-extended
+cd hll-geofences-extended
+```
 
-4. **Edit Configuration**:
-   Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
+3. Select Player Count Configuration:
 
-5. **Set Up Docker**:
-   - Rename the Docker configuration file:
-     ```bash
-     mv extended.docker-compose.yml docker-compose.yml
-     ```
-   - Build the Docker image (required after changing files):
-     ```bash
-     docker compose build
-     ```
-   - Start the Docker container:
-     ```bash
-     docker compose up -d
-     ```
-   - Stop the Docker container (when needed):
-     ```bash
-     docker compose down
-     ```
+```bash
+# 60 Player
+mv seeding.3caps.60player.config.yml config.yml
+```
+or
+```bash
+# 70 Player
+mv seeding.3caps.70player.config.yml config.yml
+```
+or
+```bash
+# 80 Player
+mv seeding.3caps.80player.config.yml config.yml
+```
 
-6. **Set Up Discord Bot (Optional)**:
-   - Rename and fill out the environment file: Channel ID must be not the same as Basic Seeding (script clears channel on startup)
-     ```bash
-     mv extended.example.env .env
-     ```
-   - Rename the script:
-     ```bash
-     mv extended.main.mjs main.mjs
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Start the script:
-     ```bash
-     node main.mjs
-     ```
+4. Edit Configuration:  
+Open `config.yml` and fill in `SERVER-IP`, `RCON-PORT`, and `RCON-PW`.
+
+5. Rename Docker config:
+
+```bash
+mv extended.docker-compose.yml docker-compose.yml
+```
+
+6. Build Docker image:
+
+```bash
+docker compose build
+```
+
+7. Start Docker:
+
+```bash
+docker compose up -d
+```
+
+8. Stop Docker:
+
+```bash
+docker compose down
+```
+
+---
+
+## Set Up Discord Bot (Extended Version)
+
+1. Rename and fill out the environment file:
+
+```bash
+mv extended.example.env .env
+```
+
+2. Rename the script:
+
+```bash
+mv extended.main.mjs main.mjs
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the script:
+
+```bash
+node main.mjs
+```
+
+---
 
 ## Running Scripts Persistently with PM2
 
-To run either or both scripts in the background with automatic restarts, use PM2.
+1. Install PM2 globally:
 
-1. **Install PM2 Globally**:
-   ```bash
-   npm install -g pm2
-   ```
+```bash
+npm install -g pm2
+```
 
-2. **Set Up PM2 Autostart**:
-   ```bash
-   pm2 startup
-   ```
+2. Setup PM2 autostart:
 
-3. **Start Scripts**:
-   - For Basic Seeding:
-     ```bash
-     cd hll-geofences-basic
-     pm2 start main.mjs --name hll-geofence-basic
-     ```
-   - For Extended Seeding:
-     ```bash
-     cd hll-geofences-extended
-     pm2 start main.mjs --name hll-geofence-extended
-     ```
+```bash
+pm2 startup
+```
 
-4. **Save PM2 Configuration**:
-   ```bash
-   pm2 save
-   ```
+3. Start the scripts:
 
-5. **Enable PM2 Autostart**:
-   ```bash
-   pm2 startup
-   ```
+```bash
+cd hll-geofences-basic
+pm2 start main.mjs --name hll-geofence-basic
 
-## Managing PM2 Processes
+cd ../hll-geofences-extended
+pm2 start main.mjs --name hll-geofence-extended
+```
 
-- **View Running Processes**:
-  ```bash
-  pm2 status
-  ```
-- **Monitor Processes**:
-  ```bash
-  pm2 monit
-  ```
-- **Control Processes** (replace `id` with the process ID from `pm2 status`):
-  - Stop: `pm2 stop id`
-  - Restart: `pm2 restart id`
-  - Start: `pm2 start id`
-  - Delete: `pm2 delete id`
-- **Recover Processes** (if not showing):
-  ```bash
-  pm2 resurrect
-  ```
+4. Save PM2 configuration:
 
-## Notes
+```bash
+pm2 save
+```
 
-- Ensure all configuration files (`config.yml`, `.env`) are correctly filled out before starting.
-- Run `docker compose build` after modifying any Docker-related files to ensure changes are applied.
-- Docker and Discord bot setups are optional and can be skipped if not needed.
-- PM2 is recommended for production to ensure scripts run continuously.
+5. (Optional) Start PM2 again on reboot:
 
-For issues or contributions, please open an issue or pull request on the [GitHub repository](https://github.com/2KU77B0N3S/hll-geofences).
+```bash
+pm2 startup
+```
+
+### Managing PM2 Processes
+
+```bash
+pm2 status       # View processes
+pm2 monit        # Monitor live
+pm2 stop id      # Stop by ID
+pm2 restart id   # Restart by ID
+pm2 delete id    # Delete by ID
+pm2 resurrect    # Recover after reboot
+```
+
+---
+
+## Usage
+
+The bot runs as a Discord bot and can be controlled via buttons.
+
+---
+
+## Roadmap
+
+* [ ] Language file support (`en`, `es`, `fr`, `de`)
+* [ ] More seeding logic presets
+* [x] Admin control panel
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Contact
+
+Created by **2KU77B0N3S**. For questions or suggestions, please create an issue on GitHub.
+
+📧 **Contact:** [Discord](https://discord.com/users/785886867073400903)
